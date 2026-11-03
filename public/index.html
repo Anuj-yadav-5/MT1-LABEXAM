@@ -1,19 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Employee Task Management - Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Task Management</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            color: #222;
+            background: white;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 8%;
+            border-bottom: 1px solid #ddd;
+        }
+
+        nav h2 {
+            font-size: 22px;
+        }
+
+        nav div {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: inherit;
+            font-size: 14px;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1100px;
+            width: 90%;
+            margin: 45px auto;
+        }
+
+        /* Welcome Section */
+        .welcome {
+            margin-bottom: 40px;
+        }
+
+        .welcome h1 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .welcome p {
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* Statistics */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 45px;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            padding: 22px;
+            border-radius: 5px;
+        }
+
+        .card h3 {
+            font-size: 14px;
+            font-weight: normal;
+            margin-bottom: 12px;
+        }
+
+        .card h1 {
+            font-size: 27px;
+        }
+
+        /* Task Table */
+        .task-section h2 {
+            font-size: 21px;
+            margin-bottom: 20px;
+        }
+
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 16px 14px;
+            border-bottom: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        th {
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            border-top: 1px solid #ddd;
+            padding: 22px;
+            margin-top: 50px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 650px) {
+            nav {
+                padding: 18px 5%;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            nav div {
+                gap: 15px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .welcome h1 {
+                font-size: 25px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <h1>Employee Task Management</h1>
-  <p>Welcome to the Employee Task Management home page.</p>
-  <p>This page is served from <strong>public/index.html</strong> using Node.js FS module.</p>
-  <h2>Available HTTP routes</h2>
-  <ul>
-    <li><a href="/">Home / Welcome</a></li>
-    <li><a href="/tasks">View tasks (JSON)</a></li>
-    <li><a href="/about">About application</a></li>
-  </ul>
+
+    <nav>
+        <h2>TaskManager</h2>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="/tasks">Tasks API</a>
+            <a href="/about">About</a>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <section class="welcome">
+            <h1>Employee Task Management</h1>
+            <p>
+                Welcome to your task management dashboard.
+                Manage employee assignments, monitor progress
+                and keep track of daily activities.
+            </p>
+        </section>
+
+        <section class="stats">
+
+            <div class="card">
+                <h3>Total Tasks</h3>
+                <h1>03</h1>
+            </div>
+
+            <div class="card">
+                <h3>Pending Tasks</h3>
+                <h1>01</h1>
+            </div>
+
+            <div class="card">
+                <h3>Completed Tasks</h3>
+                <h1>01</h1>
+            </div>
+
+        </section>
+
+        <section class="task-section">
+
+            <h2>Recent Employee Tasks</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Task Name</th>
+                            <th>Assigned To</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Develop Login Page</td>
+                            <td>Rahul Sharma</td>
+                            <td>Pending</td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td>Design Dashboard</td>
+                            <td>Priya Verma</td>
+                            <td>In Progress</td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td>Test Employee Module</td>
+                            <td>Amit Kumar</td>
+                            <td>Completed</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        © 2026 Employee Task Management
+    </footer>
+
 </body>
 </html>
